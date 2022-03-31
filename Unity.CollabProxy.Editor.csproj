@@ -36,27 +36,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\AssemblyInfo.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Bootstrap.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\CollabAnalytics.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\CollabHistoryWindow.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\CollabToolbarButton.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\CollabToolbarWindow.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Presenters\CollabHistoryPresenter.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\BuildStatusButton.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\CollabHistoryDropDown.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\CollabHistoryDropDownItem.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\CollabHistoryItem.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\CollabHistoryItemFactory.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\CollabHistoryRevisionLine.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\HistoryProgressSpinner.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\ICollabHistoryItemFactory.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\PagedListView.cs" />
-     <Compile Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Collab\Views\StatusView.cs" />
-     <None Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Resources\Styles\CollabHistoryDark.uss" />
-     <None Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Unity.CollabProxy.Editor.asmdef" />
-     <None Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Resources\Styles\CollabHistoryLight.uss" />
-     <None Include="Packages\com.unity.collab-proxy\Editor\Collaborate\Resources\Styles\CollabHistoryCommon.uss" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Bootstrap.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\CollabAnalytics.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\CollabHistoryWindow.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\CollabToolbarButton.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\CollabToolbarWindow.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Presenters\CollabHistoryPresenter.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\BuildStatusButton.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\CollabHistoryDropDown.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\CollabHistoryDropDownItem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\CollabHistoryItem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\CollabHistoryItemFactory.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\CollabHistoryRevisionLine.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\HistoryProgressSpinner.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\ICollabHistoryItemFactory.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\PagedListView.cs" />
+     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Collab\Views\StatusView.cs" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Resources\Styles\CollabHistoryDark.uss" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Unity.CollabProxy.Editor.asmdef" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Resources\Styles\CollabHistoryLight.uss" />
+     <None Include="Library\PackageCache\com.unity.collab-proxy@1.14.15\Editor\Collaborate\Resources\Styles\CollabHistoryCommon.uss" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.34f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -263,6 +263,9 @@
     </Reference>
     <Reference Include="unityplastic">
         <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Library\PackageCache\com.unity.collab-proxy@1.14.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Engine">
+        <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Assets\Engine.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

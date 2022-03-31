@@ -303,6 +303,9 @@
     <Reference Include="unityplastic">
         <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Library\PackageCache\com.unity.collab-proxy@1.14.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
+    <Reference Include="Engine">
+        <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Assets\Engine.dll</HintPath>
+    </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.34f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
     </Reference>

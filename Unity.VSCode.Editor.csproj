@@ -252,6 +252,9 @@
     <Reference Include="unityplastic">
         <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Library\PackageCache\com.unity.collab-proxy@1.14.15\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
+    <Reference Include="Engine">
+        <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Assets\Engine.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
         <HintPath>C:\Users\gkkra\PHYS1521\project\PhysicsDemo\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
