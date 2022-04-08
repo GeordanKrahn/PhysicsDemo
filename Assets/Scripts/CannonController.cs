@@ -6,6 +6,7 @@ using System;
 public class CannonController : MonoBehaviour
 {
     public List<Transform> ListOfTargets;
+    public GameObject projectile;
     private Tuple<Vector3, bool> NextTarget
     {
         get
@@ -107,6 +108,9 @@ public class CannonController : MonoBehaviour
 
     void Shoot()
     {
-
+        // This may need to be improved... perhaps a PrefabPool...
+        var newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
+        newProjectile.GetComponent<Rigidbody>().AddForce(calculatedForce, ForceMode.Impulse);
+        state = State.WaitForTarget;
     }
 }
