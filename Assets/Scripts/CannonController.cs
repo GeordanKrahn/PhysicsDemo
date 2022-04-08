@@ -36,6 +36,7 @@ public class CannonController : MonoBehaviour
     private State state;
     private float currentInput;
     private float previousInput;
+    private Vector3 currentTargetPosition;
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class CannonController : MonoBehaviour
                 ProcessInput();
                 break;
             case State.GetTargetPosition:
-                // TODO
+                UpdateTargetPosition();
                 break;
             case State.CalculateForce:
                 // TODO
@@ -76,6 +77,20 @@ public class CannonController : MonoBehaviour
         if(currentInput == 0 && previousInput > 0)
         {
             state = State.GetTargetPosition;
+        }
+    }
+
+    void UpdateTargetPosition()
+    {
+        var newTarget = NextTarget;
+        if(newTarget.Item2)
+        {
+            currentTargetPosition = newTarget.Item1;
+            state = State.CalculateForce;
+        }
+        else
+        {
+            state = State.WaitForTarget;
         }
     }
 }
