@@ -37,6 +37,7 @@ public class CannonController : MonoBehaviour
     private float currentInput;
     private float previousInput;
     private Vector3 currentTargetPosition;
+    private Vector3 calculatedForce; // this could be a property...
 
     void Start()
     {
@@ -57,13 +58,13 @@ public class CannonController : MonoBehaviour
                 UpdateTargetPosition();
                 break;
             case State.CalculateForce:
-                // TODO
+                CalculateForce();
                 break;
             case State.ApplyRotation:
-                // TODO
+                RotateToTarget();
                 break;
             case State.Shoot:
-                // TODO
+                Shoot();
                 break;
             default:
                 Debug.LogError($"Unknown or invalid state\n{state}");
@@ -92,5 +93,20 @@ public class CannonController : MonoBehaviour
         {
             state = State.WaitForTarget;
         }
+    }
+
+    void CalculateForce()
+    {
+
+    }
+
+    void RotateToTarget()
+    {
+
+    }
+
+    void Shoot()
+    {
+
     }
 }
