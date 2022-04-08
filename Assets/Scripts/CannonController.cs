@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CannonController : MonoBehaviour
 {
     public List<Transform> ListOfTargets;
-    private Vector3 NextTarget
+    private Tuple<Vector3, bool> NextTarget
     {
         get
         {
-            Vector3 position = ListOfTargets[0].position;
-            ListOfTargets.RemoveAt(0);
-            return position;
+            Vector3 position = Vector3.zero;
+            bool hasTarget = false;
+            if(ListOfTargets.Count > 0)
+            {
+                position = ListOfTargets[0].position;
+                ListOfTargets.RemoveAt(0);
+                hasTarget = true;
+            }
+            return new Tuple<Vector3, bool>(position, hasTarget);
         }
     }
     private enum State
