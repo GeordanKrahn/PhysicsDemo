@@ -18,6 +18,10 @@ public class CannonController : MonoBehaviour
                 ListOfTargets.RemoveAt(0);
                 hasTarget = true;
             }
+            if(!hasTarget)
+            {
+                Debug.LogWarning("List of targets is empty");
+            }
             return new Tuple<Vector3, bool>(position, hasTarget);
         }
     }
@@ -30,19 +34,23 @@ public class CannonController : MonoBehaviour
         Shoot
     }
     private State state;
+    private float currentInput;
+    private float previousInput;
 
     void Start()
     {
         state = State.WaitForTarget;
+        currentInput = 0;
     }
 
 
     void FixedUpdate()
     {
+        currentInput = Input.GetAxis("Submit");
         switch(state)
         {
             case State.WaitForTarget:
-                // TODO
+                ProcessInput();
                 break;
             case State.GetTargetPosition:
                 // TODO
@@ -57,7 +65,17 @@ public class CannonController : MonoBehaviour
                 // TODO
                 break;
             default:
+                Debug.LogError($"Unknown or invalid state\n{state}");
                 break;
+        }
+        previousInput = currentInput;
+    }
+
+    void ProcessInput()
+    {
+        if(currentInput == 0 && previousInput > 0)
+        {
+            state = State.GetTargetPosition;
         }
     }
 }
