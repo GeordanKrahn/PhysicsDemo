@@ -14,3 +14,38 @@
 Note: we can perform the calculation using the Physics engine, 
         then use unity physics to take the calculations and 
         apply the rotation and force.
+
+In The CannonController script:
+    The CannonController will have a 
+
+        public ListOfTargets
+        private NextTarget
+        private state
+
+    Create a state machine to control the cannon
+    The cannon will have the following states:
+        
+        1 WaitForTarget
+            Listen for input
+            If input is found
+                Go to next state
+        2 GetTargetPosition
+            Use the NextTarget property of the ListOfTargets
+                this removes the first target in the list and then returns it
+                if the target is null, 
+                    go back to WaitForTarget
+                else
+                    go to next state 
+        3 CalculateForce
+            With the position of the target found, calculate the necessary force to hit the target
+            The calculation will be done using MathPhysicsEngine
+                Go to the next state
+        4 ApplyRotation
+            Create a quaternion from the direction using MathPhysicsEngine
+            Rotate to face in Force Direction.
+            After the rotation has finished
+                Go to the next state
+        5 Shoot
+            Instantiate the Cannonball Projectile
+            Apply the calculated force
+                Go back to WaitForTarget
