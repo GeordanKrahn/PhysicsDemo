@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class CannonController : MonoBehaviour
 {
+    public List<Transform> ListOfTargets;
+    private Vector3 NextTarget
+    {
+        get
+        {
+            Vector3 position = ListOfTargets[0].position;
+            ListOfTargets.RemoveAt(0);
+            return position;
+        }
+    }
     private enum State
     {
         WaitForTarget,
         GetTargetPosition,
         CalculateForce,
         ApplyRotation,
-        Shoot,
+        Shoot
     }
     private State state;
 
