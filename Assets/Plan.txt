@@ -1,10 +1,16 @@
 1: Get Vector Position for the target
-    The projectile will use trigger collision to pass through objects.
     This will simplify the calculations as it would require more
     to calculate force at a spawning point 
 2: Calculate force required to launch projectile to coordinates
     Normalize the vector. Calculate force (projectile motion)
     Normalize the x and z axes, Then use the 2D calculation
-3: Quaternion rotate to direction of force
+3: Quaternion rotate the cannon to direction of force
     Create a quaternion to represent our desired rotation.
+    Use unity physics to apply the rotation
 4: Spawn Projectile and Apply force.
+    The projectile will use trigger collision to pass through objects.
+    Must have a rigidbody to simulate gravity
+
+Note: we can perform the calculation using the Physics engine, 
+        then use unity physics to take the calculations and 
+        apply the rotation and force.
