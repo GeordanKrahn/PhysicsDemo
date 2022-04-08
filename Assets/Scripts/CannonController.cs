@@ -98,12 +98,12 @@ public class CannonController : MonoBehaviour
 
     void CalculateForce()
     {
-
+        // TODO - use the MathPhysics Engine to calculate the necessary force to apply to the projectile
     }
 
     void RotateToTarget()
     {
-
+        // TODO - Create a quaternion using the MathPhysicsEngine, then rotate to the desired rotation using Unity.
     }
 
     void Shoot()
