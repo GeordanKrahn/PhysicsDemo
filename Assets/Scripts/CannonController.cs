@@ -35,6 +35,14 @@ public class CannonController : MonoBehaviour
         Shoot
     }
     private State state;
+
+    private enum AimingState
+    {
+        None,
+        FindRotation,
+        Rotating,
+    }
+    private AimingState aimState;
     private float currentInput;
     private float previousInput;
     private Vector3 currentTargetPosition;
@@ -43,6 +51,7 @@ public class CannonController : MonoBehaviour
     void Start()
     {
         state = State.WaitForTarget;
+        aimState = AimingState.None;
         currentInput = 0;
     }
 
@@ -104,6 +113,18 @@ public class CannonController : MonoBehaviour
     void RotateToTarget()
     {
         // TODO - Create a quaternion using the MathPhysicsEngine, then rotate to the desired rotation using Unity.
+        switch(aimState)
+        {
+            case AimingState.None:
+                InitiateAiming();
+                break;
+            case AimingState.FindRotation:
+                break;
+            case AimingState.Rotating:
+                break;
+            default:
+                break;
+        }
     }
 
     void Shoot()
@@ -112,5 +133,13 @@ public class CannonController : MonoBehaviour
         var newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         newProjectile.GetComponent<Rigidbody>().AddForce(calculatedForce, ForceMode.Impulse);
         state = State.WaitForTarget;
+    }
+
+    void InitiateAiming()
+    {
+        if(state == State.ApplyRotation)
+        {
+            aimState = AimingState.FindRotation;
+        }
     }
 }
