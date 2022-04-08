@@ -18,18 +18,18 @@ Note: we can perform the calculation using the Physics engine,
 In The CannonController script:
     The CannonController will have a 
 
-        public ListOfTargets
-        private NextTarget
-        private state
+        public ListOfTargets - complete
+        private NextTarget - complete
+        private state - complete
 
     Create a state machine to control the cannon
     The cannon will have the following states:
         
-        1 WaitForTarget
+        1 WaitForTarget - complete
             Listen for input
             If input is found
                 Go to next state
-        2 GetTargetPosition
+        2 GetTargetPosition - complete
             Use the NextTarget property of the ListOfTargets
                 this removes the first target in the list and then returns it
                 if the target is null, 
@@ -45,7 +45,7 @@ In The CannonController script:
             Rotate to face in Force Direction.
             After the rotation has finished
                 Go to the next state
-        5 Shoot
+        5 Shoot - complete
             Instantiate the Cannonball Projectile
             Apply the calculated force
                 Go back to WaitForTarget

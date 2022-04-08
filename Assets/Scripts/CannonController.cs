@@ -108,7 +108,7 @@ public class CannonController : MonoBehaviour
 
     void Shoot()
     {
-        // This may need to be improved... perhaps a PrefabPool...
+        // This may need to be improved... perhaps a PrefabPool... ? 
         var newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         newProjectile.GetComponent<Rigidbody>().AddForce(calculatedForce, ForceMode.Impulse);
         state = State.WaitForTarget;
