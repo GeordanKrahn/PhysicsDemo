@@ -108,6 +108,7 @@ public class CannonController : MonoBehaviour
     void CalculateForce()
     {
         // TODO - use the MathPhysics Engine to calculate the necessary force to apply to the projectile
+        // 1: Determine Velocity required for trajectory
     }
 
     void RotateToTarget()
@@ -119,6 +120,9 @@ public class CannonController : MonoBehaviour
                 InitiateAiming();
                 break;
             case AimingState.FindRotation:
+                // Create a Quaternion from Euler Angles which represent the force
+                
+               
                 break;
             case AimingState.Rotating:
                 break;
