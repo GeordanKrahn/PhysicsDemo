@@ -11,6 +11,7 @@ public class CannonController : MonoBehaviour
     // control the interpolator.
     public float maxRotationTime;
     public int numInterpolations;
+    bool isReturning = false;
     public float timeStep
     {
         get
@@ -111,6 +112,7 @@ public class CannonController : MonoBehaviour
             case State.Shoot:
                 Debug.Log("Shoot");
                 Shoot();
+                state = State.ApplyRotation;
                 break;
             default:
                 Debug.LogError($"Unknown or invalid state\n{state}");
@@ -167,7 +169,16 @@ public class CannonController : MonoBehaviour
             case AimingState.FindRotation:
                 // Create a Quaternion from Euler Angles which represent the force
                 Debug.Log("aiming: FindRotation");
-                FindRotation();
+                if(!isReturning)
+                {
+                    Debug.Log("aiming: aquiring target");
+                    FindRotation();
+                }
+                else
+                {
+                    Debug.Log("aiming: reseting rotation");
+                    ResetRotation();
+                }
                 break;
             case AimingState.Rotating:
                 // SLERP
@@ -179,7 +190,15 @@ public class CannonController : MonoBehaviour
                 // Clean up everything and go to the Shoot state
                 aimState = AimingState.None;
                 rotationTime = 0;
-                state = State.Shoot;
+                if(isReturning)
+                {
+                    state = State.WaitForTarget;
+                    isReturning = false;
+                }
+                else
+                {
+                    state = State.Shoot;
+                }
                 break;
             default:
                 break;
@@ -191,7 +210,7 @@ public class CannonController : MonoBehaviour
         // This may need to be improved... perhaps a PrefabPool... ? 
         var newProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         newProjectile.GetComponent<Rigidbody>().AddForce(calculatedForce, ForceMode.Impulse);
-        state = State.WaitForTarget;
+        isReturning = true;
     }
 
     void InitiateAiming()
@@ -217,6 +236,14 @@ public class CannonController : MonoBehaviour
         aimState = AimingState.Rotating;
     }
 
+    void ResetRotation()
+    {
+        Quaternion store = TargetOrientation;
+        TargetOrientation = CurrentOrientation;
+        CurrentOrientation = store;
+        angleBetweenQuaternions = GetAngleBetweenQuaternions(TargetOrientation);
+        aimState = AimingState.Rotating;
+    }
     void SLERP()
     {
         Debug.Log($"{rotationTime}");
