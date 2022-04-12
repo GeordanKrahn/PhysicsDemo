@@ -193,6 +193,7 @@ public class CannonController : MonoBehaviour
                 if(isReturning)
                 {
                     state = State.WaitForTarget;
+                    transform.rotation = Quaternion.identity; // disable this during presentation to show that the rounding errors accumulate and the quaternions need to be either reset or renormalized
                     isReturning = false;
                 }
                 else
