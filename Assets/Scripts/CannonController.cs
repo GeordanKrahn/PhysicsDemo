@@ -239,12 +239,7 @@ public class CannonController : MonoBehaviour
     double GetAngleBetweenQuaternions(Quaternion Q)
     {
         var dotProduct = Q.w * CurrentOrientation.w + Q.x * CurrentOrientation.x + Q.y * CurrentOrientation.y + Q.z * CurrentOrientation.z;
-        if(dotProduct < 0)
-        {
-            CurrentOrientation = new Quaternion(-CurrentOrientation.x, -CurrentOrientation.y, -CurrentOrientation.z, CurrentOrientation.w);
-            dotProduct = Q.w * CurrentOrientation.w + Q.x * CurrentOrientation.x + Q.y * CurrentOrientation.y + Q.z * CurrentOrientation.z;
-            CurrentOrientation = new Quaternion(-CurrentOrientation.x, -CurrentOrientation.y, -CurrentOrientation.z, CurrentOrientation.w);
-        }
+
         double angle = Mathf.Acos(Q.w * CurrentOrientation.w + Q.x * CurrentOrientation.x + Q.y * CurrentOrientation.y + Q.z * CurrentOrientation.z);
         return angle;
     }
