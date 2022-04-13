@@ -251,10 +251,10 @@ public class CannonController : MonoBehaviour
         if(rotationTime <= maxRotationTime)
         {
             Quaternion Qt = new (
-                (float)((((Sin(1 - rotationTime) * (angleBetweenQuaternions))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.x) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.x)),
-                (float)((((Sin(1 - rotationTime) * (angleBetweenQuaternions))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.y) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.y)),
-                (float)((((Sin(1 - rotationTime) * (angleBetweenQuaternions))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.z) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.z)),
-                (float)((((Sin(1 - rotationTime) * (angleBetweenQuaternions))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.w) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.w)));
+                (float)((((Sin((1 - rotationTime) * (angleBetweenQuaternions)))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.x) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.x)),
+                (float)((((Sin((1 - rotationTime) * (angleBetweenQuaternions)))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.y) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.y)),
+                (float)((((Sin((1 - rotationTime) * (angleBetweenQuaternions)))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.z) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.z)),
+                (float)((((Sin((1 - rotationTime) * (angleBetweenQuaternions)))/ Sin(angleBetweenQuaternions)) * CurrentOrientation.w) + ((Sin(angleBetweenQuaternions * rotationTime) / Sin(angleBetweenQuaternions)) * TargetOrientation.w)));
             transform.rotation = Qt;
         }
         else

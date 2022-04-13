@@ -332,9 +332,6 @@
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
         <HintPath>C:\Users\gkkra\Unity\Demonstration\physics\PhysicsDemo\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Engine">
-        <HintPath>C:\Users\gkkra\Unity\Demonstration\physics\PhysicsDemo\Assets\Engine.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
         <HintPath>C:\Users\gkkra\Unity\Demonstration\physics\PhysicsDemo\Library\PackageCache\com.unity.collab-proxy@1.15.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
